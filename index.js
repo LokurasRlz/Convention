@@ -33,79 +33,74 @@ menuItems.forEach(
 );
 
 // Dynamic HTML
-const speakers = [
-  {
-    name: 'Carl Jung',
-    description: 'Swiss psychiatrist and psychoanalyst who founded analytical psychology',
-    image: './css/Featured/Jung.jpg',
-    detail: "Jung's 'Psychological Types' inspired Aushra to create Socionics",
-    id: 'spkr1',
-    class: 'one',
-  },
-  {
-    name: 'Aushra Augusta',
-    description: 'Lithuanian economist who founded Socionics',
-    image: './css/Featured/Aushra.jpg',
-    detail: 'Established Model A in the 1960s and 1970s in Vilnius, Lithuania',
-    id: 'spkr2',
-    class: 'two',
-  },
-  {
-    name: 'Viktor Gulenko',
-    description: 'Ukrainian founder of the School of Humanitarian Socionics',
-    image: './css/Featured/Gulenko.png',
-    detail: 'Psychologist and socionist who created Model G',
-    id: 'spkr3',
-    class: 'three',
-  },
-  {
-    name: 'Vera Stratiyevskaya',
-    description: 'Russian author of popular type and intertype relationship descriptions',
-    image: './css/Featured/Stratiyevskaya.jpg',
-    detail: 'Known for producing some of the most lifelike descriptions of socionic types',
-    id: 'spkr4',
-    class: 'four',
-  },
-  {
-    name: 'Grigoriy Reinin',
-    description: 'Russian creator of the Reinin dichotomies.',
-    image: './css/Featured/Reinin.jpg',
-    detail: 'One of the most prominent socionics theorists of St. Petersburg community',
-    id: 'spkr5',
-    class: 'five',
-  },
-  {
-    name: 'Ekaterina Filatova',
-    description: 'Early Russian socionist from St. Petersburg, Russia',
-    image: './css/Featured/Filatova.jpg',
-    detail: 'Known for her collection of photographs of people of different sociotypes',
-    id: 'spkr6',
-    class: 'six',
-  },
+const singerSection = document.querySelector('#featured-singers .container-fluid');
+const singersArray = [{
+  name: 'Atif Aslam',
+  accolades: 'Tamgha-e-Imtiaz (2008), Dubai Walk of Fame (2019)',
+  desc: 'He has recorded numerous chart-topping songs in both Pakistan and India and is known for his vocal belting technique',
+  image: 'css/Featured/mario.jpg',
+  class: 'singer1',
+},
+{
+  name: 'Aima Baig',
+  accolades: 'Pop, Rock, classical',
+  desc: 'She rose to fame after her work on Lahore Se Aagey (2016), due to which she gained popularity through many other soundtracks and her appearance in Coke Studio',
+  image: 'css/Featured/rene.jpg',
+  class: 'singer2',
+},
+{
+  name: 'Rahat Fateh',
+  accolades: 'Honorary Doctorate of Music by the University of Oxford',
+  desc: 'Pakistani Sufi singer and musician, primarily of Qawwali, devotional music of the Muslim Sufis',
+  image: 'css/Featured/faker.jpg',
+  class: 'singer3',
+},
+{
+  name: 'Falak Shabbir',
+  accolades: 'Owner of Falak Records Music',
+  desc: 'A Pakistani singer-songwriter, also referred as the "King of Soul Style", He first came to attention with his 2008 debut single "Rog"',
+  image: 'assets/images/falak.jpg',
+  class: 'singer4',
+},
+{
+  name: 'Shamoon Ismail',
+  accolades: 'Lux Style Awards- Nominated 2019 (Singer of the Year)',
+  desc: 'Islamabad-based singer, songwriter, composer and multi-instrumentalist known for his signature blend of "Punjabi and blues"',
+  image: 'assets/images/shamoon.jpeg',
+  class: 'singer5',
+},
+{
+  name: 'Momina Mustehsan',
+  accolades: 'BBC 100 most influential women, Forbes "30 Under 30"',
+  desc: 'The release of the 2016 song "Afreen Afreen" established Mustehsan as one of the most recognized singers of Pakistan',
+  image: 'assets/images/Momina-Mustehsan.jpg',
+  class: 'singer6',
+},
 ];
 
-// Declare body
-const body = document.querySelector('.main-container');
-// Create "speakers" div
-const speakersDiv = document.createElement('div');
-speakersDiv.classList.add('speakers');
-
-// Declare "about-partners" section
-const aboutPartners = document.querySelector('.about-partners');
-// Put "speakers" before Partners section
-body.insertBefore(speakersDiv, aboutPartners);
-
-for (let i = 0; i < speakers.length; i += 1) {
-  const speaker = document.createElement('div');
-  speaker.classList.add('speaker');
-  speakersDiv.appendChild(speaker);
-
-  speaker.innerHTML = `
-  <div class="speaker-bg">
-    <img class="speaker-img" src="${speakers[i].image}" alt="Viktor Gulenko">
+function creatSinger(profile) {
+  singerSection.innerHTML += `
+  <article class="${profile.class} singer">
+  <div class="featured-singers__img">
+      <img src="${profile.image}" alt="">
   </div>
-  <h2 class="speaker-name">${speakers[i].name}</h2>
-  <p class="speaker-desc red">${speakers[i].description}</p>
-  <h5 class="speaker-detail">${speakers[i].detail}</h5>
-  `;
+  <div class="featured-singers__desc">
+      <h3>${profile.name}</h3>
+      <h4>${profile.accolades}</h4>
+      <hr>
+      <p>${profile.desc}</p>
+  </div>
+</article>`;
 }
+
+function createSingerSection() {
+  for (let i = 0; i < singersArray.length; i += 1) {
+    creatSinger(singersArray[i]);
+    if (i > 1) {
+      document.querySelector(`.singer${i + 1}`).classList.add('toggle');
+    }
+  }
+  singerSection.innerHTML += '<div id="more">More <a href="#featured-singers"><i class="fas fa-chevron-down"></i></a></div>';
+}
+
+createSingerSection();

@@ -156,6 +156,8 @@ ul {
 /* Cards page */
 #program {
   background: #272a31 url(Images/pattern-bg.png);
+  justify-content: center;
+  align-items: center;
 }
 
 #program.container-fluid {
@@ -186,6 +188,7 @@ ul {
   display: grid;
   grid-template: repeat(5, 1fr) / 1fr;
   gap: 20px;
+  justify-content: center;
 }
 
 .events__cards {
@@ -337,40 +340,40 @@ ul {
 
 /* Featured Speakers */
 
-.featured-speakers {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 2rem;
+#featured-singers {
+  margin: 10% 0 10%;
 }
 
-.speaker {
+#featured-singers .container-fluid {
+  width: 90%;
+  margin: auto;
   display: grid;
-  grid-template-columns: auto auto;
-  grid-template-rows: auto auto auto;
-  justify-content: start;
-  padding: 2rem;
-  gap: 0.3rem 1rem;
+  gap: 50px;
+  align-items: center;
 }
 
-.speaker-img {
-  margin: 10px;
-  height: 100px;
-  width: 100px;
-  grid-column: 1/2;
-  grid-row: 1 / span 2;
+.featured-singers__head h2 {
+  color: #272a31;
+  font-family: 'Lato', sans-serif;
+  font-weight: 600;
+  text-align: center;
 }
 
-.speaker-bg {
+.singer {
+  display: flex;
+}
+
+.featured-singers__img {
   position: relative;
-  height: 100px;
-  width: 100px;
-  grid-column: 1/2;
-  grid-row: 1 / span 2;
-  margin: 10px;
 }
 
-.speaker-bg::before {
+.featured-singers__img img {
+  width: 130px;
+  height: 130px;
+  margin: 12px 20px 0 12px;
+}
+
+.featured-singers__img::before {
   content: "";
   position: absolute;
   z-index: -1;
@@ -378,34 +381,177 @@ ul {
   height: 70px;
   top: 0;
   left: 0;
-  background: url(./Images/SpeakerBackground.png);
+  background: url('/css/Images/SpeakerBackground.png');
+  opacity: 0.7;
+  border: 1px solid black;
 }
 
-.speaker-name {
-  grid-column: 2/span 1;
+.featured-singers__desc hr {
+  width: 30px;
+  color: #d3d3d3;
+  margin: 6px 0 10px;
 }
 
-.speaker-desc {
-  font-weight: 700;
-  grid-column: 2 / span 1;
-  grid-row: 2 / 3;
+.toggle {
+  display: none;
 }
 
-.speaker-detail {
-  grid-column: 2 / span 2;
-  grid-row: 4/ span 2;
+.featured-singers__desc h3 {
+  font-family: 'Lato', sans-serif;
+  color:  #272a31;
+  font-weight: 800;
 }
 
-.featured-button {
-  background-color: white;
-  border-color: #272a31;
-  padding: 0.5rem;
+.featured-singers__desc h4 {
+  margin-top: 10px;
+  font-family: 'Lato', sans-serif;
+  color: #ec5242;
+  font-style: italic;
+  font-weight: 400;
+}
+
+.featured-singers__desc p {
+  font-family: 'Lato', sans-serif;
+}
+
+#partners {
+  margin: 80px 0 0;
+  background: var(--colorGr);
+  min-height: 150px;
+}
+
+#partners-main {
+  margin: 80px 0 0;
+  background: var(--colorGr);
+  min-height: 150px;
+  display: none;
+}
+
+#partners .container-fluid {
+  padding: 10% 0 10%;
+  width: 90%;
+  margin: auto;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#partners h2 {
+  color: white;
+  font-weight: 500;
+  text-align: center;
+  font-family: var(--fontFamily-lato);
+}
+
+#partners-main .container-fluid {
+  padding: 10% 0 10%;
+  width: 90%;
+  margin: auto;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#partners-main h2 {
+  color: white;
+  font-weight: 500;
+  text-align: center;
+  font-family: var(--fontFamily-lato);
+}
+
+.partner__flex {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
   width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+.partner__flex a {
+  text-decoration: none;
+  color: rgb(201, 186, 186);
+  font-size: 1.9rem;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.google {
+  width: 33%;
+}
+
+.slack {
+  width: 33%;
+}
+
+.airbnb {
+  width: 33%;
+}
+
+.soundcloud {
+  width: 50%;
+}
+
+.reddit {
+  width: 50%;
+}
+
+/* ### footer ### */
+#footer {
+  padding: 5px 0 5px;
+}
+
+#footer-main {
+  padding: 5px 0 5px;
+  display: none;
+}
+
+#footer .container-fluid {
+  width: 90%;
+  margin: auto;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+#footer img {
+  width: 130px;
+  margin-right: 20px;
+}
+
+#footer .container-fluid p {
+  font-family: var(--fontFamily-Lato);
+  font-weight: normal;
+  font-size: 0.5rem;
+  color: var(--colorBl);
+}
+
+#footer-main .container-fluid {
+  width: 90%;
+  margin: auto;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+#footer-main img {
+  width: 130px;
+  margin-right: 20px;
+}
+
+#footer-main .container-fluid p {
+  font-family: var(--fontFamily-lato);
+  font-weight: normal;
+  font-size: 0.7rem;
+  color: var(--colorBl);
 }
 
 /* Desktop version */
 
 @media only screen and (min-width: 768px) {
+
+  .container-fluid {
+    width: 70%;
+  }
+
   /* Nav bar */
   .desktop-bar {
     display: flex;
@@ -468,13 +614,17 @@ ul {
   }
 
   /* Main program */
-  #events {
+  #program {
     background: #272a31 url(Images/pattern-bg.png);
+    align-items: center;
+    justify-content: center;
   }
 
   #program.container-fluid {
     width: 70%;
     padding: 7% 0 10%;
+    align-items: center;
+    justify-content: center;
   }
 
   .events__grid {
@@ -482,6 +632,7 @@ ul {
     flex-wrap: wrap;
     grid-template: 1fr / repeat(5, 1fr);
     gap: 5px;
+    justify-items: center;
   }
 
   .events__cards {
@@ -543,34 +694,47 @@ ul {
     text-decoration: underline;
   }
 
-  .speakers {
-    display: grid;
-    grid-template-columns: auto auto;
-    grid-template-rows: auto auto auto;
-    justify-items: start;
-    padding: 0 10%;
+  #featured-singers {
+    margin: 7% 0 8%;
   }
 
-  .speaker {
-    gap: 0.3rem 1rem;
-  }
-
-  .about-partners,
-  .copyright {
+  #featured-singers .container-fluid {
+    width: 70%;
+    margin: auto;
     display: flex;
+    gap: 60px 90px;
+    align-items: flex-start;
+    justify-content: center;
+    flex-wrap: wrap;
   }
 
-  .speaker-img {
-    grid-row: 1 / span 5;
+  .featured-singers__head {
+    flex-basis: 100%;
   }
 
-  .speaker-bg {
-    grid-row: 1 / span 5;
+  #more {
+    display: none;
   }
 
-  .speaker-detail {
-    grid-column: 2;
-    grid-row: 3/ span 1;
+  .singer {
+    flex: 1 1 350px;
+  }
+
+  .featured-singers__img img {
+    width: 150px;
+    height: 150px;
+    margin: 12px 20px 0 12px;
+  }
+
+  .featured-singers__desc p {
+    font-family: 'Lato', sans-serif;
+    font-weight: normal;
+    font-size: 1.1rem;
+    line-height: 1.5;
+  }
+
+  .toggle {
+    display: flex;
   }
 
   .featured-button {
@@ -580,6 +744,103 @@ ul {
   .copyright-logo {
     width: 15%;
   }
+
+  #partners-main {
+    display: flex;
+  }
+
+  #partners-main .container-fluid {
+    padding: 3% 0 3%;
+    width: 70%;
+    margin: auto;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #partners {
+    display: none;
+  }
+
+  #partners-main h2 {
+    color: rgb(163, 161, 161);
+    font-size: 1.8rem;
+  }
+
+  #partners-main .section__hr {
+    margin-bottom: 10px;
+  }
+
+  .partner__flex {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+
+  .partner__flex a {
+    color: rgb(163, 161, 161);
+    font-size: 2.3rem;
+    margin-top: 20px;
+  }
+
+  .google,
+  .slack,
+  .airbnb,
+  .soundcloud,
+  .reddit {
+    width: auto;
+    flex: 1 1 80px;
+  }
+
+  #footer {
+    background: rgb(252, 243, 243);
+    padding: 2%;
+  }
+
+  #footer .container-fluid {
+    width: 70%;
+    justify-content: left;
+  }
+
+  #footer img {
+    width: 200px;
+    margin-right: 20px;
+  }
+
+  #footer .container-fluid p {
+    font-family: var(--fontFamily-lato);
+    font-weight: normal;
+    color: var(--colorBl);
+    font-size: 0.8rem;
+  }
+
+  #footer .container-fluid p br {
+    display: none;
+  }
+
+  #footer-main {
+    display: flex;
+    padding: 2%;
+  }
+
+  #footer-main .container-fluid {
+    width: 70%;
+    justify-content: left;
+  }
+
+  #footer-main img {
+    width: 200px;
+    margin-right: 20px;
+  }
+
+  #footer-main .container-fluid p {
+    font-family: var(--fontFamily-lato);
+    font-weight: normal;
+    color: var(--colorGr);
+    font-size: 0.8rem;
+  }
+
 
   /* About page */
   .first-heading-about {
