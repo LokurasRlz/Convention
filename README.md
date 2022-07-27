@@ -3,7 +3,7 @@
 > This Webpage is based on an annual event held in my City called Mendotaku, which is basically a convention dedicated to Anime, Manga, Cosplay, and Asian Pop Culture.
 
 
-It is a simple web page which contains information about all the events held in EME Olympiad in 2020.
+It is a simple web page which contains information about Mendotaku Convention.
 
 ## Built With
 
