@@ -11,8 +11,8 @@ It is a simple web page which contains information about all the events held in 
 
 ## Live Demo
 
-- [Live Demo Link]
-- [Video Demo Link]
+- [Live Demo Link] https://lokurasrlz.github.io/
+- [Video Demo Link] https://www.loom.com/share/8c64c305da88412694616b09eb77e8e6
 
 ## Getting Started
 
