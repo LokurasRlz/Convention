@@ -27,6 +27,7 @@ a {
 .desk-hover:link {
   color: #272a31;
   list-style: none;
+  font-family: 'Lato', sans-serif;
 }
 
 .cc-unit:link {
@@ -34,7 +35,7 @@ a {
 }
 
 .up-links {
-  color: white;
+  color: #d3d3d3;
   text-decoration: none;
   list-style: none;
 }
@@ -147,13 +148,16 @@ ul {
   padding: 2%;
   margin-top: 5%;
   margin-bottom: 5%;
+  color: #272a31;
+  font-family: 'Lato', sans-serif;
+  font-weight: 500;
 }
 
 .birthdate {
   color: rgb(65, 65, 72);
   font-weight: 800;
   font-size: 1.8rem;
-  font-family: 'Lato', sans-serif;
+  font-family: 'Cocogoose', sans-serif;
   text-align: center;
 }
 
@@ -161,7 +165,8 @@ ul {
   color: #272a31;
   text-align: center;
   font-family: 'Lato', sans-serif;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
+  font-weight: 400;
 }
 
 /* Cards page */
@@ -193,8 +198,10 @@ ul {
 }
 
 .events__grid {
-  display: grid;
-  grid-template: repeat(5, 1fr) / 1fr;
+  /* display: grid;
+  grid-template: repeat(5, 1fr) / 1fr; */
+  display: flex;
+  flex-direction: column;
   gap: 20px;
   justify-content: center;
   width: 90%;
@@ -206,12 +213,15 @@ ul {
 
 .events__cards {
   background-color: rgba(255, 255, 255, 0.1);
-  display: grid;
-  grid-template: 1fr /0.3fr 0.9fr 3fr;
+
+  /* display: grid;
+  grid-template: 1fr /0.3fr 0.9fr 3fr; */
+  display: flex;
+  flex-direction: row;
   justify-content: left;
   align-items: center;
   align-content: space-between;
-  padding: 5%;
+  padding: 3%;
   gap: 15px;
 }
 
@@ -263,6 +273,8 @@ ul {
   padding: 1rem;
   margin: 1rem;
   font-weight: 400;
+  font-family: 'Lato', sans-serif;
+  color: #272a31;
 }
 
 .about-mail {
@@ -275,6 +287,10 @@ ul {
   display: flex;
   flex-direction: column;
   align-items: center;
+  font-family: 'Lato', sans-serif;
+  color: #272a31;
+  background-color: white;
+  border: 1px solid #d3d3d3;
 }
 
 .about-logo {
@@ -285,6 +301,8 @@ ul {
   gap: 2rem;
   padding: 2rem;
   text-align: center;
+  color: #272a31;
+  font-family: 'Lato', sans-serif;
 }
 
 .card1 {
@@ -360,6 +378,8 @@ ul {
   padding: 2rem;
   gap: 1rem;
   text-align: center;
+  color: #272a31;
+  font-family: 'Lato', sans-serif;
 }
 
 .desktop-about {
@@ -499,7 +519,7 @@ ul {
 }
 
 #partners h2 {
-  color: white;
+  color: #d3d3d3;
   font-weight: 500;
   text-align: center;
   font-family: 'Lato', sans-serif;
@@ -571,10 +591,19 @@ ul {
   padding: 2rem;
   align-items: center;
   justify-content: center;
+  color: #d3d3d3;
+  font-family: 'Lato', sans-serif;
+}
+
+.copyright-logo.h6 {
+  color: #d3d3d3;
+  font-family: 'Lato', sans-serif;
 }
 
 .copyright-logo {
   width: 50%;
+  color: #272a31;
+  font-family: 'Lato', sans-serif;
 }
 
 .artist_container {
@@ -687,26 +716,21 @@ ul {
   .events__grid {
     display: flex;
     flex-wrap: wrap;
-    grid-template: 1fr / repeat(5, 1fr);
-    gap: 5px;
-    justify-items: center;
-    align-items: center;
+    flex-direction: row;
   }
 
   .events__cards {
     flex: 1 1 190px;
-    display: grid;
-    grid-template: 1fr 1fr 2fr / 1fr;
-    justify-content: center;
-    justify-items: center;
-    align-content: center;
-    gap: 10px;
-    padding: 3%;
+    display: flex;
+    flex-direction: column;
+    max-height: 20%;
   }
 
   .events__cards p {
     text-align: center;
     align-self: flex-start;
+    justify-content: center;
+    flex-wrap: wrap;
   }
 
   #participate {
@@ -798,6 +822,11 @@ ul {
 
   .copyright-logo {
     width: 15%;
+  }
+
+  .copyright-logo.h6 {
+    color: #272a31;
+    font-family: 'Lato', sans-serif;
   }
 
   #partners-main {
