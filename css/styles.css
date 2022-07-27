@@ -344,6 +344,10 @@ ul {
   font-family: 'Lato', sans-serif;
 }
 
+.featured-artists__desc p {
+  font-family: 'Lato', sans-serif;
+}
+
 #about-past .about-past__cards p {
   text-align: center;
   color: #d3d3d3;
@@ -470,10 +474,6 @@ ul {
   color: #ec5242;
   font-style: italic;
   font-weight: 400;
-}
-
-.featured-artists__desc p {
-  font-family: 'Lato', sans-serif;
 }
 
 #partners {
@@ -873,12 +873,12 @@ ul {
   }
 }
 
-.card1 {
+.card3 {
   min-height: 300px;
   min-width: 400px;
 }
 
-.card2 {
+.card4 {
   min-height: 300px;
   min-width: 400px;
 }
