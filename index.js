@@ -33,58 +33,58 @@ menuItems.forEach(
 );
 
 // Dynamic HTML
-const singerSection = document.querySelector('#featured-singers .container-fluid');
-const singersArray = [{
-  name: 'Atif Aslam',
-  accolades: 'Tamgha-e-Imtiaz (2008), Dubai Walk of Fame (2019)',
-  desc: 'He has recorded numerous chart-topping songs in both Pakistan and India and is known for his vocal belting technique',
+const artistSection = document.querySelector('#featured-artists .container-fluid');
+const artistsArray = [{
+  name: 'Mario Castañeda',
+  accolades: 'Voice Actor',
+  desc: 'He is the voice of Goku in Dragon Ball and also Hulk in Marvel, Bruce Willis, Jim Carrey, Mark Ruffalo, Tom Hanks, etc. in LatinAmerica',
   image: 'css/Featured/mario.jpg',
-  class: 'singer1',
+  class: 'artist1',
 },
 {
-  name: 'Aima Baig',
-  accolades: 'Pop, Rock, classical',
-  desc: 'She rose to fame after her work on Lahore Se Aagey (2016), due to which she gained popularity through many other soundtracks and her appearance in Coke Studio',
+  name: 'Rene Garcia',
+  accolades: 'Voice Actor',
+  desc: 'He is the voice of Vegeta in Dragon ball and also Batman in DC, Stewie Griffin, Ben Affleck, Keanu Reeves, Chris ODonnell, Michael Keaton, Paul Giamatti, John Travolta, etc. in LatinAmerica',
   image: 'css/Featured/rene.jpg',
-  class: 'singer2',
+  class: 'artist2',
 },
 {
-  name: 'Rahat Fateh',
-  accolades: 'Honorary Doctorate of Music by the University of Oxford',
-  desc: 'Pakistani Sufi singer and musician, primarily of Qawwali, devotional music of the Muslim Sufis',
+  name: 'Faker',
+  accolades: 'Pro Videogames Player',
+  desc: 'He is one of the only two players to have won the League of Legends World Championship three times, having done so in 2013, 2015 and 2016. He has also won the All-Star Paris 2014, the Mid-Season Invitational tournament in 2016 and 2017, and the IEM World Championship in 2016.',
   image: 'css/Featured/faker.jpg',
-  class: 'singer3',
+  class: 'artist3',
 },
 {
-  name: 'Falak Shabbir',
-  accolades: 'Owner of Falak Records Music',
-  desc: 'A Pakistani singer-songwriter, also referred as the "King of Soul Style", He first came to attention with his 2008 debut single "Rog"',
-  image: 'assets/images/falak.jpg',
-  class: 'singer4',
+  name: 'Satoshi Kamiya',
+  accolades: 'Origami Master',
+  desc: 'He is a Japanese origami artist. Known internationally to be a master of the craft, he began folding at age two. Kamiya began designing origami models in 1995, and has since published hundreds of his creations.',
+  image: 'css/Featured/origami.jpg',
+  class: 'artist4',
 },
 {
-  name: 'Shamoon Ismail',
-  accolades: 'Lux Style Awards- Nominated 2019 (Singer of the Year)',
-  desc: 'Islamabad-based singer, songwriter, composer and multi-instrumentalist known for his signature blend of "Punjabi and blues"',
-  image: 'assets/images/shamoon.jpeg',
-  class: 'singer5',
+  name: 'Yaya Han',
+  accolades: 'Cosplayer',
+  desc: 'She is a Chinese–American cosplayer, model and costume designer based in the United States. She is a regular judge at cosplay competitions and has appeared as a guest judge on the TBS reality show King of the Nerds multiple times. ',
+  image: 'css/Featured/cosplay.jpg',
+  class: 'artist5',
 },
 {
-  name: 'Momina Mustehsan',
-  accolades: 'BBC 100 most influential women, Forbes "30 Under 30"',
-  desc: 'The release of the 2016 song "Afreen Afreen" established Mustehsan as one of the most recognized singers of Pakistan',
-  image: 'assets/images/Momina-Mustehsan.jpg',
-  class: 'singer6',
+  name: 'MJ Choi',
+  accolades: 'Coreographer"',
+  desc: 'Based in New York and New Jersey, the I Love Dance crew has been showing off their choreography skills on stage, in the streets, and over the Internet. Director MJ Choi has been doing this ever since she founded the company in 2006.',
+  image: 'css/Featured/kpop.jpg',
+  class: 'artist6',
 },
 ];
 
-function creatSinger(profile) {
-  singerSection.innerHTML += `
-  <article class="${profile.class} singer">
-  <div class="featured-singers__img">
+function creatArtist(profile) {
+  artistSection.innerHTML += `
+  <article class="${profile.class} artist">
+  <div class="featured-artists__img">
       <img src="${profile.image}" alt="">
   </div>
-  <div class="featured-singers__desc">
+  <div class="featured-artists__desc">
       <h3>${profile.name}</h3>
       <h4>${profile.accolades}</h4>
       <hr>
@@ -93,14 +93,29 @@ function creatSinger(profile) {
 </article>`;
 }
 
-function createSingerSection() {
-  for (let i = 0; i < singersArray.length; i += 1) {
-    creatSinger(singersArray[i]);
+function createArtistSection() {
+  for (let i = 0; i < artistsArray.length; i += 1) {
+    creatArtist(artistsArray[i]);
     if (i > 1) {
-      document.querySelector(`.singer${i + 1}`).classList.add('toggle');
+      document.querySelector(`.artist${i + 1}`).classList.add('toggle');
     }
   }
-  singerSection.innerHTML += '<div id="more">More <a href="#featured-singers"><i class="fas fa-chevron-down"></i></a></div>';
+  artistSection.innerHTML += '<div id="more">More <a href="#featured-artists"><i class="fas fa-chevron-down"></i></a></div>';
 }
 
-createSingerSection();
+createArtistSection();
+
+// ### More ###
+const more = document.querySelector('#more a');
+const speaker = document.querySelectorAll('.artist');
+
+more.addEventListener('click', () => {
+  for (let i = 2; i < speaker.length; i += 1) {
+    speaker[i].classList.toggle('toggle');
+  }
+  if (speaker[2].classList.contains('toggle')) {
+    more.innerHTML = "<i class='fas fa-chevron-down'></i>";
+  } else {
+    more.innerHTML = "<i class='fas fa-chevron-up'></i>";
+  }
+});
